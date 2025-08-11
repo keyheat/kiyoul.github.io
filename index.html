@@ -16,31 +16,58 @@
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400&display=swap" rel="stylesheet">
 
   <style>
+    /* Intro block: keep image + text snug */
     .intro-flex {
       display: flex;
       align-items: flex-start;
-      gap: 1rem;
+      gap: 0.75rem;            /* small, consistent gap */
       padding-top: 0.5rem;
     }
     .intro-flex img {
       max-width: 200px;
       height: auto;
     }
-    .intro-text {
-      flex: 1;
-    }
-    .single-col p, .single-col div {
-      margin-bottom: 0.5rem;
-    }
+    .intro-text { flex: 1; }
+
+    /* Site container: add a reasonable left margin, responsive */
     .site-container {
-    max-width: 1200px;
-    margin-left: 2rem;
-    margin-right: 0;
-    padding-right: 2rem;
-  }
-    .main-education p {
-    line-height: 0.5;
-  }
+      max-width: 1200px;
+      margin-left: 1.25rem;    /* left margin (mobile/compact) */
+      margin-right: 0;
+      padding-right: 2rem;     /* a little breathing room on right */
+    }
+    @media (min-width: 900px) {
+      .site-container {
+        margin-left: 2rem;     /* larger left margin on wider screens */
+      }
+    }
+
+    /* Make sections a bit tighter vertically */
+    .main-education,
+    .main-pubs {
+      padding-top: 0.35rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+
+    /* Reduce spacing between items without killing readability */
+    .single-col p,
+    .single-col div {
+      margin-bottom: 0.3rem;   /* tighter row spacing */
+      line-height: 1.2;        /* readable line spacing inside each item */
+    }
+
+    /* Publications list: compact but readable */
+    .main-pubs ul {
+      margin-top: 0.25rem;
+      padding-left: 1.1rem;
+    }
+    .main-pubs li {
+      margin-top: 0.6rem;      /* slightly tighter than default */
+      line-height: 1.2;
+    }
+
+    /* Optional: tighten the center text headings a touch */
+    .center-text { margin-bottom: 0.4rem; }
   </style>
 </head>
 <body class="about">
@@ -74,7 +101,7 @@
 
     <!-- Education -->
     <div class="main-education single-col">
-      <p><strong>Education</strong></p>
+      <p class="center-text"><strong>Education</strong></p>
       <div><strong>2018</strong> — Ph.D. in Electrical Engineering, <strong>California Institute of Technology</strong> (Advisor: 
         <a href="http://eas.caltech.edu/people/vahala">Kerry Vahala</a>)</div>
       <div><strong>2012</strong> — M.S. in Electrical Engineering, <strong>California Institute of Technology</strong></div>
@@ -84,15 +111,15 @@
 
     <!-- Academic Experience -->
     <div class="main-education single-col">
-      <p><strong>Academic Experience</strong></p>
-      <div><strong>2023–Present</strong> — Assistant Professor of Electrical Engineering, <strong>Harvard University</strong> </div>
-      <div><strong>2021–2022</strong> — Research Scientist, Ginzton Laboratory, <strong>Stanford University</strong> </div>
-      <div><strong>2018–2021</strong> — Postdoctoral Scholar in Electrical Engineering, <strong>Stanford University</strong> </div>
+      <p class="center-text"><strong>Academic Experience</strong></p>
+      <div><strong>2023–Present</strong> — Assistant Professor of Electrical Engineering, <strong>Harvard University</strong></div>
+      <div><strong>2021–2022</strong> — Research Scientist, Ginzton Laboratory, <strong>Stanford University</strong></div>
+      <div><strong>2018–2021</strong> — Postdoctoral Scholar in Electrical Engineering, <strong>Stanford University</strong></div>
     </div>
 
     <!-- Honors & Awards -->
     <div class="main-pubs single-col">
-      <p><strong>Honors &amp; Awards</strong></p>
+      <p class="center-text"><strong>Honors &amp; Awards</strong></p>
       <div><strong>2020.09</strong> — 
         <a href="https://www.osa.org/en-us/awards_and_grants/awards/award_description/engineeringexcellence/">
           Paul F. Forman Team Engineering Excellence Award
@@ -104,27 +131,13 @@
 
     <!-- Publications -->
     <div class="main-pubs single-col">
-      <p><strong>Publication Metrics &amp; Selected Publications</strong></p>
+      <p class="center-text"><strong>Publication Metrics &amp; Selected Publications</strong></p>
       <div>h-index &gt; 30, Total citations &gt; 5000, avg citations per journal article &gt; 100 (source: 
         <a href="https://scholar.google.com/citations?user=hKmswacAAAAJ&hl=en">Google Scholar</a>).
       </div>
       <div>42 peer-reviewed journals (Nature: 1, Science: 4, Nature Photonics: 9, Nature Physics: 1)</div>
       <ul>
-        <li>
-          Guidry*, Lukin*, Yang*, …, Vučković,
-          <a href="https://www.nature.com/articles/s41566-021-00901-z">“Quantum optics of soliton microcombs”</a>,
-          <em>Nature Photonics</em> (2022).<br>
-          Yang, …, Vučković,
-          <a href="https://www.nature.com/articles/s41566-020-0606-0">“Inverse-designed nonreciprocal pulse router for chip-based LiDAR”</a>,
-          <em>Nature Photonics</em> (2020).<br>
-          Yang, …, Vahala,
-          <a href="https://www.nature.com/articles/s41566-018-0132-5">“Bridging ultrahigh-Q devices and photonic circuits”</a>,
-          <em>Nature Photonics</em> (2018).<br>
-          Yang, …, Vahala,
-          <a href="http://www.nature.com/nphoton/journal/v10/n5/abs/nphoton.2016.36.html">“Broadband dispersion-engineered microresonator on a chip”</a>,
-          <em>Nature Photonics</em> (2016).
-        </li>
-        <li class="paper-desc" style="margin-top:1rem;">
+        <li class="paper-desc" style="margin-top:0.6rem;">
           <a href="Publication.html">+ extended publication list</a>
         </li>
       </ul>
@@ -132,7 +145,7 @@
 
     <!-- Professional Service -->
     <div class="main-pubs single-col">
-      <p><strong>Professional Services</strong></p>
+      <p class="center-text"><strong>Professional Services</strong></p>
       <div><strong>2022</strong> — Co-Editor of <strong>ACS Photonics</strong>, Special Issue on Optimized Photonics and Inverse Design</div>
       <div><strong>2019–2021</strong> — Technical Program Committee, <strong>IEEE Photonics Conference</strong></div>
       <div><strong>2014–</strong> — Regular reviewer for <strong>Nature, Science, Nature Photonics, Science Advances, Optica, ACS Photonics</strong>, etc.</div>
@@ -141,9 +154,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
