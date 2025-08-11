@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contact | Kiyoul Yang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts (clean, cross‑platform sans) -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icon libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root{
+      --crimson:#A51C30;      /* Harvard Crimson */
+      --ink:#1a1a1a;
+      --muted:#6b7280;
+      --link:#0a66c2;
+      --container:1050px;
+    }
+
+    html,body{margin:0;padding:0}
+    html{font-size:16px}
+    @media (min-width:900px){ html{font-size:17px} }
+    @media (min-width:1200px){ html{font-size:18px} }
+
+    body{
+      font-family:"Source Sans 3",system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      line-height:1.5;
+      background:#fff;
+    }
+
+    /* Header */
+    .site-header{ background:var(--crimson); color:#fff; }
+    .site-header .wrap{
+      max-width:var(--container);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0.85rem 1rem;
+    }
+    .brand{ font-weight:700; letter-spacing:.2px; font-size:1.125rem; }
+    .nav a{ color:#fff; text-decoration:none; margin-left:1.1rem; font-weight:600; opacity:.95; }
+    .nav a:hover{ text-decoration:underline }
+
+    /* Main container */
+    .section{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:1.25rem 1rem;
+    }
+    h1{
+      font-size:1.6rem;
+      margin:0 0 .5rem;
+      line-height:1.2;
+    }
+    .muted{ color:var(--muted); }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:.75rem 2rem;
+    }
+    @media (min-width:720px){
+      .contact-grid{
+        grid-template-columns: 2fr 1fr; /* left: details, right: quick links */
+        align-items:start;
+      }
+    }
+
+    .card{
+      border-top:1px solid #e5e7eb;
+      padding-top:.85rem;
+    }
+
+    /* Icons row */
+    .contact-icons{
+      display:flex;
+      align-items:center;
+      gap:.6rem;
+      margin-top:.35rem;
+    }
+    .contact-icons a{
+      font-size:1.25rem;
+      color:var(--ink);
+      text-decoration:none;
+    }
+    .contact-icons a:hover{ color:var(--link); }
+
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* Footer (personal line) */
+    footer{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:0 1rem 1rem;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .footer-icons{
+      display:inline-flex;
+      gap:.4rem;
+      margin-left:.5rem;
+      vertical-align:middle;
+    }
+    .footer-icons a{ color:var(--ink); font-size:1.1rem; }
+    .footer-icons a:hover{ color:var(--link); }
+
+    /* Harvard branding footer */
+    #branding_footer{
+      background:#f7f7f7;
+      border-top:1px solid #e5e7eb;
+      margin-top:.5rem;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+    #branding_footer .branding-container{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:.8rem 1rem;
+    }
+    #branding_footer a{ color:var(--link); text-decoration:none; }
+    #branding_footer a:hover{ text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">Kiyoul Yang</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="bio.html">Bio</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact -->
+  <main class="section">
+    <h1>Contact</h1>
+    <div class="contact-grid">
+
+      <!-- Left: details -->
+      <div class="card">
+        <p><strong>Kiyoul Yang</strong> <span class="muted">(often “Ki Youl Yang” in scientific articles)</span></p>
+        <p>
+          E.L. Ginzton Laboratory, Stanford University<br>
+          348 Via Pueblo Mall, Stanford, CA 94305‑4088, USA
+        </p>
+        <p><strong>Email:</strong> kiyoul <span class="muted">(at)</span> seas <span class="muted">(dot)</span> harvard <span class="muted">(dot)</span> edu</p>
+
+        <div class="contact-icons" aria-label="External profiles">
+          <a href="https://scholar.google.com/citations?user=hKmswacAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+            <i class="ai ai-google-scholar"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/kiyoul/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com/KiyoulYang" target="_blank" rel="noopener noreferrer" title="Twitter / X">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: quick links -->
+      <aside class="card">
+        <p><strong>Quick Links</strong></p>
+        <ul style="margin:.25rem 0; padding-left:1rem; line-height:1.35;">
+          <li><a href="https://kiyoul.seas.harvard.edu/" target="_blank" rel="noopener noreferrer">SEAS website</a></li>
+          <li><a href="https://y-lab.seas.harvard.edu/" target="_blank" rel="noopener noreferrer">Y‑LAB</a></li>
+          <li><a href="https://scholar.google.com/citations?user=hKmswacAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/kiyoul/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://twitter.com/KiyoulYang" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+        </ul>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Personal footer line -->
+  <footer class="section" style="padding-top:0;">
+    &copy; <span id="y"></span> Kiyoul Yang
+    <span class="footer-icons">
+      <a href="https://scholar.google.com/citations?user=hKmswacAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+      <a href="https://www.linkedin.com/in/kiyoul/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/KiyoulYang" target="_blank" rel="noopener noreferrer" title="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+    </span>
+  </footer>
+
+  <!-- Harvard branding footer -->
+  <div id="branding_footer">
+    <div class="branding-container">
+      <div class="copyright">
+        Copyright &copy; 2025 The President and Fellows of Harvard College
+        | <a href="https://accessibility.harvard.edu/" target="_blank" rel="noopener noreferrer">Accessibility</a>
+        | <a href="https://accessibility.huit.harvard.edu/digital-accessibility-policy" target="_blank" rel="noopener noreferrer">Digital Accessibility</a>
+        | <a href="https://www.harvard.edu/copyright-issue/" target="_blank" rel="noopener noreferrer">Report Copyright Infringement</a>
+      </div>
+    </div>
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
