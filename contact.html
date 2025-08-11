@@ -8,15 +8,21 @@
   <!-- Fonts (close match to Harvard brand sans) -->
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icon libraries -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     :root{
-      --crimson:#A51C30;      /* Harvard Crimson */
+      --crimson:#A51C30;         /* Harvard Crimson */
       --ink:#1a1a1a;
       --muted:#6b7280;
+      --bg:#ffffff;
+      --card:#fafafa;
       --link:#0a66c2;
+      --radius:10px;
       --container:1050px;
     }
 
@@ -25,10 +31,11 @@
     @media (min-width:900px){ html{font-size:17px} }
     @media (min-width:1200px){ html{font-size:18px} }
 
-    body {
-      font-family: "Source Sans 3", "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
+    body{
+      font-family: 'helvetica-neue-light';
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.5;
     }
 
     /* Header */
