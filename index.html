@@ -189,6 +189,40 @@
       color: var(--link);
     }
 
+	/* Harvard branding footer */
+	#branding_footer {
+  		background: #f7f7f7;               /* light neutral */
+  		border-top: 1px solid #e5e7eb;
+  		margin-top: 1rem;
+  		font-size: 0.95rem;
+  		color: var(--muted);
+	}
+
+	#branding_footer .branding-container {
+  		max-width: var(--container, 1050px);
+  		margin: 0 auto;
+  		padding: 0.8rem 1rem;
+	}
+
+	#branding_footer a {
+  		color: var(--link, #0a66c2);
+  		text-decoration: none;
+	}
+
+	#branding_footer a:hover {
+  		text-decoration: underline;
+	}
+
+	/* Optional: make it tighter on mobile */
+	@media (max-width: 640px) {
+  		#branding_footer .branding-container {
+    		padding: 0.8rem 1rem;
+  		}
+  		#branding_footer .copyright {
+    		line-height: 1.35;
+  		}
+	}
+
     /* Mobile tweaks */
     @media (max-width:720px){
       .hero{ flex-direction:column }
@@ -359,16 +393,24 @@
   </span>
 </footer>
 
-  <div id="branding_footer">
-		<div class="branding-container">
-	    <div class="copyright"><span class="harvard-copyright">Copyright &copy; 2025 The President and Fellows of Harvard College</span>  | <a href="https://accessibility.harvard.edu/" >Accessibility</a> | <a href="https://accessibility.huit.harvard.edu/digital-accessibility-policy" >Digital Accessibility</a> | <a href="https://www.harvard.edu/copyright-issue/" >Report Copyright Infringement</a></div>		</div>
+  <!-- Harvard branding footer -->
+<div id="branding_footer">
+  <div class="branding-container">
+    <div class="copyright">
+      <span class="harvard-copyright">Copyright &copy; 2025 The President and Fellows of Harvard College</span>
+      | <a href="https://accessibility.harvard.edu/" target="_blank" rel="noopener noreferrer">Accessibility</a>
+      | <a href="https://accessibility.huit.harvard.edu/digital-accessibility-policy" target="_blank" rel="noopener noreferrer">Digital Accessibility</a>
+      | <a href="https://www.harvard.edu/copyright-issue/" target="_blank" rel="noopener noreferrer">Report Copyright Infringement</a>
+    </div>
   </div>
+</div>
   
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
 
 
