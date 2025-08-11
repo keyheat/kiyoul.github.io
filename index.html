@@ -106,6 +106,25 @@
     .items li{ margin:.25rem 0; line-height:1.25 }
     .muted{ color:var(--muted) }
 
+    /* Right-column years layout */
+    .two-col{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:1rem;
+    }
+    .two-col .left{
+      flex:1;
+      min-width:0; /* prevents overflow */
+    }
+    .two-col .right{
+      flex:0 0 auto;
+      color:var(--muted);
+      text-align:right;
+      white-space:nowrap;
+      padding-left:.5rem;
+    }
+
     /* Publication list */
     .pubs{ list-style:disc; padding-left:1.25rem; margin:.25rem 0 .75rem }
     .pubs li{ margin:.5rem 0; line-height:1.3 }
@@ -128,6 +147,10 @@
       .hero{ flex-direction:column }
       .headshot{ width:140px; flex-basis:140px }
       .nav{ display:none } /* keep simple; can add hamburger if you want */
+
+      /* Stack the two columns on small screens */
+      .two-col{ flex-direction:column; gap:.15rem }
+      .two-col .right{ text-align:left; padding-left:0 }
     }
   </style>
 </head>
@@ -167,27 +190,76 @@
     </div>
   </section>
 
+  <!-- Education -->
+  <section class="section" id="education">
+    <h2>Education</h2>
+    <ul class="items">
+      <li class="two-col">
+        <div class="left"><strong>Ph.D., Electrical Engineering</strong>, California Institute of Technology (Advisor: Kerry Vahala)</div>
+        <div class="right">2018</div>
+      </li>
+      <li class="two-col">
+        <div class="left"><strong>M.S., Electrical Engineering</strong>, California Institute of Technology</div>
+        <div class="right">2012</div>
+      </li>
+      <li class="two-col">
+        <div class="left"><strong>M.S., Electrical Engineering</strong>, KAIST</div>
+        <div class="right">2010</div>
+      </li>
+      <li class="two-col">
+        <div class="left"><strong>B.A., Electrical Engineering &amp; Computer Science</strong>, KAIST</div>
+        <div class="right">2008</div>
+      </li>
+    </ul>
+  </section>
 
   <!-- Experience -->
   <section class="section" id="experience">
     <h2>Academic Experience</h2>
     <ul class="items">
-      <li><strong>Harvard</strong>    Assistant Professor of Electrical Engineering</li>
-      <li><strong>Stanford</strong>    Postdoc/ Research Scientist</li>
-      <li><strong>Caltech</strong>    Graduate Research Assistant/ Posdoc</li>
+      <li class="two-col">
+        <div class="left"><strong>Harvard University</strong> — Assistant Professor of Electrical Engineering</div>
+        <div class="right">2023–Present</div>
+      </li>
+      <li class="two-col">
+        <div class="left"><strong>Stanford University</strong> — Research Scientist, Ginzton Laboratory</div>
+        <div class="right">2021–2022</div>
+      </li>
+      <li class="two-col">
+        <div class="left"><strong>Stanford University</strong> — Postdoctoral Scholar, Electrical Engineering</div>
+        <div class="right">2018–2021</div>
+      </li>
     </ul>
   </section>
 
-  <!-- Distinctions \& Fellowships -->
+  <!-- Distinctions & Fellowships -->
   <section class="section" id="honors">
     <h2>Distinctions &amp; Fellowships</h2>
     <ul class="items">
-      <li><strong>2025</strong> — Young Investigator Program Award</a>, <strong>AFOSR</strong></li>
-      <li><strong>2023</strong> — Young Faculty Award</a>, <strong>DARPA</strong></li>
-      <li><strong>2022</strong> — Herbert Walther Fellowship</a>, <strong>Max Planck Institute for the Science of Light</strong></li>
-      <li><strong>2020</strong> — <a href="https://www.osa.org/en-us/awards_and_grants/awards/award_description/engineeringexcellence/">Paul F. Forman Team Engineering Excellence Award</a>, <strong>Optica (OSA)</strong></li>
-      <li><strong>2018</strong> — Nano‑ and Quantum Science and Engineering Postdoc Fellowship, <strong>Stanford University</strong></li>
-      <li><strong>2010</strong> — Atwood Graduate Fellowship, <strong>California Institute of Technology</strong></li>
+      <li class="two-col">
+        <div class="left"><strong>Young Investigator Program Award</strong>, AFOSR</div>
+        <div class="right">2025</div>
+      </li>
+      <li class="two-col">
+        <div class="left"><strong>Young Faculty Award</strong>, DARPA</div>
+        <div class="right">2023</div>
+      </li>
+      <li class="two-col">
+        <div class="left"><strong>Herbert Walther Fellowship</strong>, Max Planck Institute for the Science of Light</div>
+        <div class="right">2022</div>
+      </li>
+      <li class="two-col">
+        <div class="left"><a href="https://www.osa.org/en-us/awards_and_grants/awards/award_description/engineeringexcellence/">Paul F. Forman Team Engineering Excellence Award</a>, <strong>Optica (OSA)</strong></div>
+        <div class="right">2020</div>
+      </li>
+      <li class="two-col">
+        <div class="left">Nano‑ and Quantum Science and Engineering Postdoc Fellowship, <strong>Stanford University</strong></div>
+        <div class="right">2018</div>
+      </li>
+      <li class="two-col">
+        <div class="left">Atwood Graduate Fellowship, <strong>California Institute of Technology</strong></div>
+        <div class="right">2010</div>
+      </li>
     </ul>
   </section>
 
@@ -214,9 +286,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
