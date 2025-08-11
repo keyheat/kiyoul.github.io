@@ -5,153 +5,242 @@
   <title>Kiyoul Yang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta property="og:title" content="Kiyoul Yang" />
-  <meta property="og:description" content="Photonic integrated systems, quantum nonlinear optics, and inverse design." />
-  <meta property="og:type" content="website" />
-
-  <link rel="stylesheet" href="p_base.css">
-  <link rel="stylesheet" href="p_ext_1.css">
-  <link rel="stylesheet" href="syntax.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+  <!-- Fonts (close match to Harvard brand sans) -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Intro block: keep image + text snug */
-    .intro-flex {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;            /* small, consistent gap */
-      padding-top: 0.5rem;
-    }
-    .intro-flex img {
-      max-width: 200px;
-      height: auto;
-    }
-    .intro-text { flex: 1; }
-
-    /* Site container: add a reasonable left margin, responsive */
-    .site-container {
-      max-width: 1200px;
-      margin-left: 1.25rem;    /* left margin (mobile/compact) */
-      margin-right: 0;
-      padding-right: 2rem;     /* a little breathing room on right */
-    }
-    @media (min-width: 900px) {
-      .site-container {
-        margin-left: 2rem;     /* larger left margin on wider screens */
-      }
+    :root{
+      --crimson:#A51C30;         /* Harvard Crimson */
+      --ink:#1a1a1a;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --card:#fafafa;
+      --link:#0a66c2;
+      --radius:10px;
+      --container:1050px;
     }
 
-    /* Make sections a bit tighter vertically */
-    .main-education,
-    .main-pubs {
-      padding-top: 0.35rem !important;
-      padding-bottom: 0.6rem !important;
+    html,body{margin:0;padding:0}
+    html{font-size:16px}
+    @media (min-width:900px){ html{font-size:17px} }
+    @media (min-width:1200px){ html{font-size:18px} }
+
+    body{
+      font-family:"Source Sans 3","IBM Plex Sans",system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.5;
     }
 
-    /* Reduce spacing between items without killing readability */
-    .single-col p,
-    .single-col div {
-      margin-bottom: 0.3rem;   /* tighter row spacing */
-      line-height: 1.2;        /* readable line spacing inside each item */
+    /* Top bar */
+    .site-header{
+      background:var(--crimson);
+      color:#fff;
+    }
+    .site-header .wrap{
+      max-width:var(--container);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0.85rem 1rem;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size:1.125rem;
+    }
+    .nav a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:1.1rem;
+      font-weight:600;
+      opacity:.95;
+    }
+    .nav a:hover{ text-decoration:underline }
+
+    /* Hero / intro */
+    .hero{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:1.25rem 1rem 0.75rem;
+      display:flex;
+      gap:1rem;
+      align-items:flex-start;
+    }
+    .headshot{
+      width:180px;
+      flex:0 0 180px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:#eee;
+    }
+    .headshot img{ display:block; width:100%; height:auto }
+    .intro h1{
+      margin:.25rem 0 .35rem;
+      font-size:1.6rem;
+      line-height:1.2;
+      font-weight:700;
+    }
+    .intro p{ margin:.25rem 0 .5rem }
+    .meta a{ color:var(--link); text-decoration:none }
+    .meta a:hover{ text-decoration:underline }
+
+    /* Sections */
+    .section{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:0.75rem 1rem 0.25rem;
+    }
+    .section h2{
+      font-size:1.25rem;
+      margin:0 0 .6rem 0;
+      line-height:1.2;
+      font-weight:700;
+      border-top:1px solid #e5e7eb;
+      padding-top:.75rem;
     }
 
-    /* Publications list: compact but readable */
-    .main-pubs ul {
-      margin-top: 0.25rem;
-      padding-left: 1.1rem;
-    }
-    .main-pubs li {
-      margin-top: 0.6rem;      /* slightly tighter than default */
-      line-height: 1.2;
+    /* Compact item lists (flush-left, tight spacing) */
+    .items{ list-style:none; padding:0; margin:.1rem 0 .5rem }
+    .items li{ margin:.25rem 0; line-height:1.25 }
+    .muted{ color:var(--muted) }
+
+    /* Publication list */
+    .pubs{ list-style:disc; padding-left:1.25rem; margin:.25rem 0 .75rem }
+    .pubs li{ margin:.5rem 0; line-height:1.3 }
+    .pubs a{ color:var(--link); text-decoration:none }
+    .pubs a:hover{ text-decoration:underline }
+
+    /* Footer */
+    footer{
+      max-width:var(--container);
+      margin:1rem auto 2rem;
+      padding:0 1rem;
+      color:var(--muted);
+      font-size:.95rem;
+      border-top:1px solid #e5e7eb;
+      padding-top:1rem;
     }
 
-    /* Optional: tighten the center text headings a touch */
-    .center-text { margin-bottom: 0.4rem; }
+    /* Mobile tweaks */
+    @media (max-width:720px){
+      .hero{ flex-direction:column }
+      .headshot{ width:140px; flex-basis:140px }
+      .nav{ display:none } /* keep simple; can add hamburger if you want */
+    }
   </style>
 </head>
-<body class="about">
+<body>
 
-  <div class="site-container">
-    <!-- Nav -->
-    <div class="nav" style="padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,.1);">
-      <a href="index.html" class="home">Kiyoul Yang</a>
-      <a href="Contact.html"     class="work fade2">Contact</a>
-      <a href="Bio.html"         class="work fade2">Bio</a>
-      <a href="News.html"        class="work fade2">News</a>
-      <a href="Publication.html" class="work fade2">Publications</a>
-      <a href="Research.html"    class="work fade2">Research</a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">Kiyoul Yang</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Header / Intro -->
-    <div class="main-education intro-flex">
-      <div>
-        <img src="images/kiyoul.png" alt="Kiyoul Yang headshot">
-      </div>
-      <div class="intro-text">
-        <strong>Assistant Professor</strong>, 
-        <a href="https://www.seas.harvard.edu/">School of Engineering &amp; Applied Sciences, Harvard University</a>
-        <br><br>
-        <strong>Research interests:</strong> Photonic integrated systems with quantum nonlinear optics and photonic inverse design for high-performance computing, communications, and sensing. <br>
-        <strong>Identifiers:</strong> Web of Science Research ID 
-        <a href="https://publons.com/researcher/3485283/kiyoul-yang/">AAI-4141-2020</a>,
-        ORCID <a href="https://orcid.org/0000-0002-0587-3201">0000-0002-0587-3201</a>
-      </div>
+  <!-- Intro -->
+  <section class="hero" id="about">
+    <div class="headshot">
+      <!-- Put your image at images/kiyoul.png -->
+      <img src="images/kiyoul.png" alt="Kiyoul Yang headshot">
     </div>
-
-    <!-- Education -->
-    <div class="main-education single-col">
-      <p class="center-text"><strong>Education</strong></p>
-      <div><strong>2018</strong> — Ph.D. in Electrical Engineering, <strong>California Institute of Technology</strong> (Advisor: 
-        <a href="http://eas.caltech.edu/people/vahala">Kerry Vahala</a>)</div>
-      <div><strong>2012</strong> — M.S. in Electrical Engineering, <strong>California Institute of Technology</strong></div>
-      <div><strong>2010</strong> — M.S. in Electrical Engineering, <strong>KAIST</strong></div>
-      <div><strong>2008</strong> — B.A. in Electrical Engineering and Computer Science, <strong>KAIST</strong></div>
+    <div class="intro">
+      <h1>Assistant Professor, Harvard SEAS</h1>
+      <p>
+        Photonic integrated systems with quantum nonlinear optics and photonic inverse design
+        for high‑performance computing, communications, and sensing.
+      </p>
+      <p class="meta">
+        Web of Science Research ID:
+        <a href="https://publons.com/researcher/3485283/kiyoul-yang/">AAI‑4141‑2020</a> ·
+        ORCID:
+        <a href="https://orcid.org/0000-0002-0587-3201">0000‑0002‑0587‑3201</a>
+      </p>
     </div>
+  </section>
 
-    <!-- Academic Experience -->
-    <div class="main-education single-col">
-      <p class="center-text"><strong>Academic Experience</strong></p>
-      <div><strong>2023–Present</strong> — Assistant Professor of Electrical Engineering, <strong>Harvard University</strong></div>
-      <div><strong>2021–2022</strong> — Research Scientist, Ginzton Laboratory, <strong>Stanford University</strong></div>
-      <div><strong>2018–2021</strong> — Postdoctoral Scholar in Electrical Engineering, <strong>Stanford University</strong></div>
-    </div>
+  <!-- Education -->
+  <section class="section" id="education">
+    <h2>Education</h2>
+    <ul class="items">
+      <li><strong>2018</strong> — Ph.D., Electrical Engineering, <strong>California Institute of Technology</strong> (Advisor: <a href="http://eas.caltech.edu/people/vahala">Kerry Vahala</a>)</li>
+      <li><strong>2012</strong> — M.S., Electrical Engineering, <strong>California Institute of Technology</strong></li>
+      <li><strong>2010</strong> — M.S., Electrical Engineering, <strong>KAIST</strong></li>
+      <li><strong>2008</strong> — B.A., Electrical Engineering and Computer Science, <strong>KAIST</strong></li>
+    </ul>
+  </section>
 
-    <!-- Honors & Awards -->
-    <div class="main-pubs single-col">
-      <p class="center-text"><strong>Honors &amp; Awards</strong></p>
-      <div><strong>2020.09</strong> — 
-        <a href="https://www.osa.org/en-us/awards_and_grants/awards/award_description/engineeringexcellence/">
-          Paul F. Forman Team Engineering Excellence Award
-        </a>, <strong>Optica (OSA)</strong>
-      </div>
-      <div><strong>2018.01</strong> — Nano- and Quantum Science and Engineering Postdoc Fellowship, <strong>Stanford University</strong></div>
-      <div><strong>2010.07</strong> — Atwood Graduate Fellowship, <strong>California Institute of Technology</strong></div>
-    </div>
+  <!-- Experience -->
+  <section class="section" id="experience">
+    <h2>Academic Experience</h2>
+    <ul class="items">
+      <li><strong>2023–Present</strong> — Assistant Professor of Electrical Engineering, <strong>Harvard University</strong></li>
+      <li><strong>2021–2022</strong> — Research Scientist, Ginzton Laboratory, <strong>Stanford University</strong></li>
+      <li><strong>2018–2021</strong> — Postdoctoral Scholar, Electrical Engineering, <strong>Stanford University</strong></li>
+    </ul>
+  </section>
 
-    <!-- Publications -->
-    <div class="main-pubs single-col">
-      <p class="center-text"><strong>Publication Metrics &amp; Selected Publications</strong></p>
-      <div>h-index &gt; 30, Total citations &gt; 5000, avg citations per journal article &gt; 100 (source: 
-        <a href="https://scholar.google.com/citations?user=hKmswacAAAAJ&hl=en">Google Scholar</a>).
-      </div>
-      <div>42 peer-reviewed journals (Nature: 1, Science: 4, Nature Photonics: 9, Nature Physics: 1)</div>
-      <ul>
-        <li class="paper-desc" style="margin-top:0.6rem;">
-          <a href="Publication.html">+ extended publication list</a>
-        </li>
-      </ul>
-    </div>
+  <!-- Honors -->
+  <section class="section" id="honors">
+    <h2>Honors &amp; Awards</h2>
+    <ul class="items">
+      <li><strong>2020.09</strong> — <a href="https://www.osa.org/en-us/awards_and_grants/awards/award_description/engineeringexcellence/">Paul F. Forman Team Engineering Excellence Award</a>, <strong>Optica (OSA)</strong></li>
+      <li><strong>2018.01</strong> — Nano‑ and Quantum Science and Engineering Postdoc Fellowship, <strong>Stanford University</strong></li>
+      <li><strong>2010.07</strong> — Atwood Graduate Fellowship, <strong>California Institute of Technology</strong></li>
+    </ul>
+  </section>
 
-    <!-- Professional Service -->
-    <div class="main-pubs single-col">
-      <p class="center-text"><strong>Professional Services</strong></p>
-      <div><strong>2022</strong> — Co-Editor of <strong>ACS Photonics</strong>, Special Issue on Optimized Photonics and Inverse Design</div>
-      <div><strong>2019–2021</strong> — Technical Program Committee, <strong>IEEE Photonics Conference</strong></div>
-      <div><strong>2014–</strong> — Regular reviewer for <strong>Nature, Science, Nature Photonics, Science Advances, Optica, ACS Photonics</strong>, etc.</div>
-    </div>
-  </div>
+  <!-- Publications -->
+  <section class="section" id="publications">
+    <h2>Publication Metrics &amp; Selected Publications</h2>
+    <p class="muted">h‑index &gt; 30, Total citations &gt; 5000, avg citations per journal article &gt; 100 (source: <a href="https://scholar.google.com/citations?user=hKmswacAAAAJ&hl=en">Google Scholar</a>).</p>
+    <p class="muted">42 peer‑reviewed journals (Nature: 1, Science: 4, Nature Photonics: 9, Nature Physics: 1)</p>
+    <ul class="pubs">
+      <li>
+        Guidry*, Lukin*, Yang*, …, Vučković,
+        <a href="https://www.nature.com/articles/s41566-021-00901-z">Quantum optics of soliton microcombs</a>,
+        <em>Nature Photonics</em> (2022).
+      </li>
+      <li>
+        Yang, …, Vučković,
+        <a href="https://www.nature.com/articles/s41566-020-0606-0">Inverse‑designed nonreciprocal pulse router for chip‑based LiDAR</a>,
+        <em>Nature Photonics</em> (2020).
+      </li>
+      <li>
+        Yang, …, Vahala,
+        <a href="https://www.nature.com/articles/s41566-018-0132-5">Bridging ultrahigh‑Q devices and photonic circuits</a>,
+        <em>Nature Photonics</em> (2018).
+      </li>
+      <li>
+        Yang, …, Vahala,
+        <a href="http://www.nature.com/nphoton/journal/v10/n5/abs/nphoton.2016.36.html">Broadband dispersion‑engineered microresonator on a chip</a>,
+        <em>Nature Photonics</em> (2016).
+      </li>
+    </ul>
+    <p><a href="Publication.html">+ extended publication list</a></p>
+  </section>
 
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your.email@seas.harvard.edu">your.email@seas.harvard.edu</a></p>
+  </section>
+
+  <footer>
+    &copy; <span id="y"></span> Kiyoul Yang · Harvard John A. Paulson School of Engineering and Applied Sciences
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
