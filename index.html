@@ -114,6 +114,13 @@
     .items{ list-style:none; padding:0; margin:.1rem 0 .5rem }
     .items li{ margin:.25rem 0; line-height:1.25 }
     .muted{ color:var(--muted) }
+	#professional-services .two-col {
+	  line-height: 1.0;      /* tighter line spacing within each item */
+	  margin-bottom: 0.95rem; /* more spacing between different items */
+	}
+	#professional-services .professional-items li:last-child {
+		margin-bottom: 0;
+	}
 
     /* Right-column years layout */
     .two-col{
@@ -233,11 +240,6 @@
       .two-col{ flex-direction:column; gap:.15rem }
       .two-col .right{ text-align:left; padding-left:0 }
     }
-	  
-	#professional-services .two-col {
-	  line-height: 1.0;      /* tighter line spacing within each item */
-	  margin-bottom: 0.95rem; /* more spacing between different items */
-	  }
   </style>
 </head>
 <body>
@@ -396,41 +398,43 @@
   </section>
 
   <!-- Professional Services -->
-  <section class="section" id="professional services">
+  <section class="section" id="professional-services">
     <h2>Professional Services</h2>
-    <li class="two-col">
-        <div class="left meta">Editor for <a href="https://www.nature.com/lsa/"
-                                                                target="_blank"
-                                                                rel="noopener noreferrer">Light:Science &amp; Applications</a> (2023-2028), <a href="https://www.degruyterbrill.com/journal/key/nanoph/"
-                                                                                                                                            target="_blank"
-                                                                                                                                            rel="noopener noreferrer">Nanophotonics</a> (2024-2025)</div>
-        <div class="right"></div>
-    </li>
-    <li class="two-col">
-        <div class="left meta">Editorial Board for <a href="https://pubs.acs.org/journal/apchd5"
-                                                                target="_blank"
-                                                                rel="noopener noreferrer">ACS Photonics</a> (2023-Present), 
-												   <a href="https://onlinelibrary.wiley.com/page/journal/21928614/homepage/editorial-board"
-                                                                target="_blank"
-                                                                rel="noopener noreferrer">Nanophotonics</a> (2025-Present)</div>
-        <div class="right"></div>
-    </li>
-    <li class="two-col">
-        <div class="left meta">Guest Editor of <strong>ACS Photonics</strong>, <a href="https://pubs.acs.org/toc/apchd5/10/4" target="_blank" rel="noopener noreferrer">Special Issue on Optimized Photonics and Inverse Design</a> (2023); <strong>Nanophotonics</strong>, <a href="https://onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)2192-8614.lithium-niobate-photonics" target="_blank" rel="noopener noreferrer">Special Issue on Lithium Niobate Photonics</a> (2026) </div>
-        <div class="right"></div>
-    </li>
-    <li class="two-col">
-        <div class="left">Organizer of Symposium on Integrated ultrashort pulse generators (<strong>CLEO</strong>, 2025), Optical technologies for data center (<strong>CLEO</strong>, 2026)</div>
-        <div class="right"></div>
-    </li>
-	<li class="two-col">
-        <div class="left">Technical Program Committe at <strong>IEEE Photonics Conference</strong> (2019 - 2021), <strong>Optica Advanced Photonics Congress</strong> (2023), <strong>CLEO Pacific Rim</strong> (2024), <strong>CLEO</strong> (2024 - 2026)</div>
-        <div class="right"></div>
-    </li>
-    <li class="two-col">
-        <div class="left">Regular reviewer for <strong>Nature, Science, Nature Photonics, Science Advances, Physical Review Letters, Physical Review X, Optica, Laser & Photonics Reviews, ACS Photonics etc.</strong> (part of the extended list is in this <a href="https://orcid.org/0000-0002-0587-3201" target="_blank" rel="noopener noreferrer">link</a>) </div>
-        <div class="right"></div>
-    </li>
+	  <ul class="items professional-items">
+	    <li class="two-col">
+	        <div class="left meta">Editor for <a href="https://www.nature.com/lsa/"
+ 	                                                               target="_blank"
+    	                                                            rel="noopener noreferrer">Light:Science &amp; Applications</a> (2023-2028), <a href="https://www.degruyterbrill.com/journal/key/nanoph/"
+        	                                                                                                                                    target="_blank"
+            	                                                                                                                                rel="noopener noreferrer">Nanophotonics</a> (2024-2025)</div>
+  	      <div class="right"></div>
+  	  </li>
+  	  <li class="two-col">
+    	    <div class="left meta">Editorial Board for <a href="https://pubs.acs.org/journal/apchd5"
+    	                                                            target="_blank"
+        	                                                        rel="noopener noreferrer">ACS Photonics</a> (2023-Present), 
+													   <a href="https://onlinelibrary.wiley.com/page/journal/21928614/homepage/editorial-board"
+                	                                                target="_blank"
+                    	                                            rel="noopener noreferrer">Nanophotonics</a> (2025-Present)</div>
+ 	       <div class="right"></div>
+   	 </li>
+  	  <li class="two-col">
+    	    <div class="left meta">Guest Editor of <strong>ACS Photonics</strong>, <a href="https://pubs.acs.org/toc/apchd5/10/4" target="_blank" rel="noopener noreferrer">Special Issue on Optimized Photonics and Inverse Design</a> (2023); <strong>Nanophotonics</strong>, <a href="https://onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)2192-8614.lithium-niobate-photonics" target="_blank" rel="noopener noreferrer">Special Issue on Lithium Niobate Photonics</a> (2026) </div>
+    	    <div class="right"></div>
+  	  </li>
+   	  <li class="two-col">
+     	   <div class="left">Organizer of Symposium on Integrated ultrashort pulse generators (<strong>CLEO</strong>, 2025), Optical technologies for data center (<strong>CLEO</strong>, 2026)</div>
+        	<div class="right"></div>
+      </li>
+	  <li class="two-col">
+     	   <div class="left">Technical Program Committe at <strong>IEEE Photonics Conference</strong> (2019 - 2021), <strong>Optica Advanced Photonics Congress</strong> (2023), <strong>CLEO Pacific Rim</strong> (2024), <strong>CLEO</strong> (2024 - 2026)</div>
+        	 <div class="right"></div>
+   	  </li>
+   	 <li class="two-col">
+    	    <div class="left">Regular reviewer for <strong>Nature, Science, Nature Photonics, Science Advances, Physical Review Letters, Physical Review X, Optica, Laser & Photonics Reviews, ACS Photonics etc.</strong> (part of the extended list is in this <a href="https://orcid.org/0000-0002-0587-3201" target="_blank" rel="noopener noreferrer">link</a>) </div>
+       	 <div class="right"></div>
+	 </li>
+	</ul>
   </section>
 
 
