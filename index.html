@@ -114,9 +114,12 @@
     .items{ list-style:none; padding:0; margin:.1rem 0 .5rem }
     .items li{ margin:.25rem 0; line-height:1.25 }
     .muted{ color:var(--muted) }
-	#professional-services .two-col {
-	  line-height: 1.0;      /* tighter line spacing within each item */
-	  margin-bottom: 0.95rem; /* more spacing between different items */
+	#professional-services .professional-items li.two-col {
+	  margin-top: 0;      /* tighter line spacing within each item */
+	  margin-bottom: 0.9rem; /* more spacing between different items */
+	}
+	#professional-services .professional-items li.two-col .left {
+		line-height: 1.12;        /* spacing within wrapped lines of one item */
 	}
 	#professional-services .professional-items li:last-child {
 		margin-bottom: 0;
